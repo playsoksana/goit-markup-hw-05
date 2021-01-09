@@ -137,6 +137,7 @@ body {
   display: block;
   align-items: center;
   color: var(--primari-title);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current::after {
@@ -167,6 +168,7 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-header:hover,
@@ -249,6 +251,7 @@ body {
   box-sizing: border-box;
   border-radius: 50%;
   background-color: var(--icon-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .icon {
@@ -305,7 +308,7 @@ body {
   margin: 0 auto;
 }
 
-.hero-link {
+.btn-hero {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.88;
@@ -320,6 +323,7 @@ body {
   border: 0;
   border-radius: 4px;
   padding: 10px 32px;
+  cursor: pointer;
 }
 
 /*  преимуществa компании*/
@@ -517,6 +521,8 @@ body {
   justify-content: center;
   color: var(--icon-color-second);
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-network .link-icon:hover,
@@ -549,6 +555,8 @@ body {
   border: 1px solid var(--icon-color-second);
   border-radius: 4px;
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-client .link-company:hover,
@@ -588,6 +596,9 @@ body {
   margin-bottom: 0;
 
   cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list {
@@ -598,8 +609,6 @@ body {
 .button-portfolio:focus {
   background-color: var(--acccent-color);
   color: var(--second-title);
-
-  border-radius: 4px;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
     0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
@@ -629,7 +638,6 @@ body {
 .item-portfolio {
   border: 0;
   max-width: calc(100% / 3 - 30px);
-
   margin: 30px 0 0 30px;
 }
 
@@ -642,18 +650,19 @@ body {
   text-decoration: none;
   color: inherit;
   font-style: normal;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.photo {
-  width: 100%;
+.overlay-portfolio .photo {
+  display: block;
 }
 
 .item-portfolio .link-portfolio:focus,
 .item-portfolio .link-portfolio:hover {
   border: 1px solid var(--border-color-card);
-  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
 .box-card {
@@ -694,7 +703,7 @@ body {
   left: 0;
   top: 0;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(+300px);
+  transform: translateY(+293px);
 
   margin: 0;
   padding: 63px 24px;
@@ -705,4 +714,46 @@ body {
 .link-portfolio:hover .text-overlay,
 .link-portfolio:focus .text-overlay {
   transform: translateY(0px);
+}
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--backgroung-white);
+  padding: 8px 8px;
+}
+
+.backdrop .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--backgroung-white);
+  border-radius: 50%;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
