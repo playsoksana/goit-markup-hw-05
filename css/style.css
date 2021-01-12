@@ -393,17 +393,17 @@ body {
   height: 70px;
 }
 
-/* Works */
-.works {
+/* Work */
+.work .list {
   display: flex;
   justify-content: space-between;
 }
 
-.works .item-work {
+.work .item {
   width: calc((100% - 60px) / 3);
 }
 
-.works .link-work {
+.work .link {
   position: relative;
 
   display: block;
@@ -412,12 +412,12 @@ body {
   padding-bottom: 0;
 }
 
-.photo-works {
+.work .img {
   width: 100%;
   height: 100%;
 }
 
-.title-work {
+.work .title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -445,7 +445,7 @@ body {
   background-color: var(--second-background);
 }
 
-.photo-team .title-item {
+.item-team .name {
   font-weight: 500;
   line-height: 1.14;
 
@@ -455,12 +455,12 @@ body {
   margin-bottom: 10px;
 }
 
-.card-team {
+.list-team {
   display: flex;
   justify-content: space-between;
 }
 
-.card-team .photo-team {
+.list-team .item-team {
   border: 0;
   width: calc((100% - 90px) / 4);
   padding-bottom: 30px;
@@ -470,12 +470,13 @@ body {
   background-color: var(--backgroung-white);
 }
 
-.team .img-photo {
-  margin-bottom: 30px;
+.list-team .photo {
+  display: block;
   width: 100%;
+  margin: 0 0 30px;
 }
 
-.photo-team .list-network {
+.item-team .list {
   display: flex;
   flex-basis: 100%;
   padding-left: 32px;
@@ -483,58 +484,55 @@ body {
   justify-content: space-between;
 }
 
-.photo-team .icon {
-  box-sizing: border-box;
-  width: 20px;
-  height: 20px;
-  border: 0;
-
-  color: var(--icon-color-second);
-}
-
-.photo-team .list {
+.item-team .list {
   display: flex;
 }
 
-.list-network .item-network {
+.item-team .item {
   display: inline-block;
   width: 44px;
   height: 44px;
 }
 
-.list-network .link-icon {
+.item-team .link {
   display: flex;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  color: var(--icon-color-second);
   fill: currentColor;
   transition: fill 250ms var(--cubic), background-color 250ms var(--cubic);
 }
 
-.list-network .link-icon:hover,
-.list-network .link-icon:focus {
+.item-team .link:hover,
+.item-team .link:focus {
   background-color: var(--accent-color);
   fill: var(--second-background);
 }
 
+.item-team .icon {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  color: var(--icon-color-second);
+}
+
 /* clients */
-.clients-list {
+.clients .list {
   display: flex;
   margin-left: -30px;
   height: 90px;
 }
 
-.item-client {
+.clients .item {
   display: flex;
   width: calc((100% - 150px) / 6);
   height: 100%;
   margin-left: 30px;
 }
 
-.item-client .link-company {
+.clients .link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -547,26 +545,29 @@ body {
   transition: color 250ms var(--cubic), border 250ms var(--cubic);
 }
 
-.item-client .link-company:hover,
-.item-client .link-company:focus {
+.clients .link:hover,
+.clients .link:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 
 /* Страница пoртфолио */
 /* кнопки */
-.portfolio .buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-  margin-left: -8px;
-}
-
 .filter {
   display: block;
 }
 
-.button-portfolio {
+.portfolio .buttons-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.buttons-list .item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.buttons-list .btn {
   display: block;
   outline: none;
 
@@ -582,20 +583,15 @@ body {
   border: 2px solid transparent;
   padding: 6px 22px;
   border-radius: 4px;
-  border-radius: 4px;
-  margin-bottom: 0;
+  margin: 0;
 
   cursor: pointer;
   transition: box-shadow 250ms var(--cubic), color 250ms var(--cubic),
     background-color 250ms var(--cubic);
 }
 
-.button-list {
-  margin-left: 8px;
-}
-
-.button-portfolio:hover,
-.button-portfolio:focus {
+.buttons-list .btn:hover,
+.buttons-list .btn:focus {
   background-color: var(--accent-color);
   color: var(--second-title);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
@@ -611,7 +607,7 @@ body {
   border-bottom: 1px solid var(--border-header);
 }
 
-.list-portfolio {
+.portfolio-list {
   font-size: 16px;
   line-height: 2;
 
@@ -624,12 +620,12 @@ body {
   border: 0;
 }
 
-.item-portfolio {
+.portfolio-list .item {
   max-width: calc(100% / 3 - 30px);
   margin: 30px 0 0 30px;
 }
 
-.link-portfolio {
+.portfolio-list .link {
   display: inline-block;
 
   width: 100%;
@@ -642,28 +638,23 @@ body {
   transition: box-shadow 250ms var(--cubic), border 250ms var(--cubic);
 }
 
-.overlay-portfolio .photo {
+.overlay-conteiner .photo {
   display: block;
+  width: 100%;
 }
 
-.item-portfolio .link-portfolio:focus,
-.item-portfolio .link-portfolio:hover {
+.portfolio-list .link:focus,
+.portfolio-list .link:hover {
   border: 1px solid var(--border-color-card);
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
-.box-card {
+.text-conteiner {
   padding: 20px 24px;
 }
 
-.box-card .paragraph-portfolio {
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.title-portfolio {
+.portfolio-list .title {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -673,9 +664,15 @@ body {
   margin-bottom: 4px;
 }
 
+.text-conteiner .paragraph {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* overlay-portfolio */
 
-.overlay-portfolio {
+.overlay-conteiner {
   position: relative;
   width: 100%;
   font-size: 18px;
@@ -684,12 +681,13 @@ body {
   overflow: hidden;
 }
 
-.text-overlay {
+.portfolio-list .text {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  display: block;
   left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
   transition: transform 250ms var(--cubic);
   transform: translateY(100%);
 
@@ -699,8 +697,8 @@ body {
   background-color: rgba(33, 150, 243, 0.9);
 }
 
-.link-portfolio:hover .text-overlay,
-.link-portfolio:focus .text-overlay {
+.portfolio-list .link:hover .text,
+.portfolio-list .link:focus .text {
   transform: translateY(0%);
 }
 
