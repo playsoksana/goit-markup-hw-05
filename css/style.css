@@ -195,36 +195,38 @@ body {
   display: flex;
 }
 
-.logotype {
+.footer .logotype {
   margin-bottom: 20px;
 }
 
-.contacts {
+.footer-address {
   display: block;
   width: 231px;
 }
 
-.footer-addres {
+.footer-address .text {
   display: flex;
   margin-top: 0;
+  text-decoration: none;
+  font-style: normal;
   color: var(--second-title);
   margin-bottom: 9px;
 }
 
-.footer-list:not(:last-child) {
+.footer-contacts .item:not(:last-child) {
   display: block;
   margin-bottom: 9px;
 }
 
-.box-logo {
+.footer .box-logo {
   margin-right: 70px;
 }
 
-.networks {
+.footer .network {
   padding-top: 12px;
 }
 
-.networks .paragraph {
+.footer .paragraph {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
@@ -232,21 +234,20 @@ body {
   text-transform: uppercase;
 
   margin-top: 0;
-  margin-bottom: 0;
   margin-bottom: 20px;
 }
 
-.icon-footer {
+.network .list-network {
   display: flex;
 }
 
-.icon-footer .icon-item {
+.list-network .item {
   display: inline-block;
   width: 44px;
   height: 44px;
 }
 
-.icon-footer .link {
+.list-network .link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,19 +261,21 @@ body {
 
 .footer .icon {
   fill: var(--second-title);
+  width: 20px;
+  height: 20px;
 }
 
-.icon-footer .link:hover,
-.icon-footer .link:focus {
+.list-network .link:hover,
+.list-network .link:focus {
   background-color: var(--accent-color);
 }
 
-.icon-footer .icon-item:not(:nth-last-child(1)) {
+.list-network .item:not(:nth-last-child(1)) {
   margin-right: 10px;
 }
 
 /* Герой */
-.overlay {
+.hero .overlay {
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -293,23 +296,21 @@ body {
   padding: 200px;
 }
 
-.title {
+.hero-conteiner {
+  width: 696px;
+  margin: 0 auto;
+}
+
+.hero .title {
+  margin: 0 auto 30px;
+
   color: var(--second-title);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.title-hero {
-  width: 696px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .btn-hero {
@@ -318,13 +319,13 @@ body {
   border: 0;
   border-radius: 4px;
   padding: 10px 32px;
+
   cursor: pointer;
   outline: none;
 
   font-size: 16px;
   font-weight: 700;
   line-height: 1.88;
-  text-align: center;
   letter-spacing: 0.06em;
 
   color: var(--second-title);
@@ -332,48 +333,43 @@ body {
 }
 
 /*  преимуществa компании*/
-.company {
+.adv {
   padding-top: 94px;
 }
 
-.title-advantage,
-.title-list {
+.title-second {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  font-weight: 700;
   color: var(--primari-title);
 }
 
-.title-advantage {
-  font-size: 36px;
-  font-weight: 700;
-
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
-.company .list-company {
+.adv .list {
   display: flex;
-  justify-content: space-around;
-  margin-left: -30px;
 }
 
-.adv-list {
+.adv-item {
   width: calc((100% - 90px) / 4);
 }
 
-.adv-list {
-  margin-left: 30px;
+.adv-item:not(:last-child) {
+  margin-right: 30px;
 }
 
-.title-list {
+.adv .title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  color: var(--primari-title);
 
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.company .point {
+.adv .paragraph {
   line-height: 1.7;
 
   margin-top: 0;
@@ -392,20 +388,9 @@ body {
   border-radius: 4px;
 }
 
-.adv-list .icon {
+.adv-item .icon {
   width: 70px;
   height: 70px;
-}
-
-.adv-list .list-network {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-
-  background: var(--second-background);
-  border-radius: 4px;
-  margin-bottom: 30px;
 }
 
 /* Works */
